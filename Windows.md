@@ -4,12 +4,14 @@ Task | Commands / steps | Tested
 ------------ | ------------- | ----
 Reboot | `shutdown /r` | Windows 7
 Run administrator command prompt| 1. right click on All Programs > Accessories > Command Prompt <br/>2. select Run as administrator | Windows 7
+Disable hibernation | `powercfg -H OFF` | Windows 10
 
 ## System Management
 
 Task | Commands / steps | Tested
 ------------ | ------------- | ----
 Activate admin account on Windows 7 Home | `net user administrator /active:yes` | Windows 7
+List hotfixes | `wmic qfe list brief` | Windows 10
 List and check volume shadow copy usage | `vssadmin list shadowstorage`<br/>`vssadmin list shadows` | Windows 7
 Delete a shadow copy | `vssadmin delete shadows /for=c: /shadow=`*ID* | Windows 7
 Delete indiviual shadow copies | `wmic /interactive:on shadowcopy delete` | Windows 7
