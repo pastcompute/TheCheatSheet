@@ -8,20 +8,18 @@
 
 0. Assumes default configuration from `apache2` package installation
 1. Create a file `/etc/apache2/sites-available/somefile`
-2. Add the following
-  ```
-  <Directory /path/to/filesystem/directory/>
+2. Add the following:
+
+        <Directory /path/to/filesystem/directory/>
         Options Indexes FollowSymLinks
         AllowOverride None
         Require all granted
-  </Directory>
-  Alias "/SomePath" "/path/to/filesystem/directory/"
-  ```
+        </Directory>
+        Alias "/SomePath" "/path/to/filesystem/directory/"```
 3. Run commands:
-  ```
-  a2ensite somefile
-  service apache2 reload
-  ```
+
+        a2ensite somefile
+        service apache2 reload
 
 ### Samba (Windows Networking) Tasks
 
@@ -33,14 +31,14 @@
 1. Edit the file /etc/samba/smb.conf
 2. Set section `[global]` entry `workgroup`
 3. Add new section:
-  ```
-  [Share]
-  path = /path/to/filesystem/directory
-  browseable = yes
-  read only = yes
-  guest ok = yes
-  ```
+
+        [Share]
+        path = /path/to/filesystem/directory
+        browseable = yes
+        read only = yes
+        guest ok = yes
+        force user = nobody
+
 4. Run commands:
-  ```
-  service samba reload
-  ```
+
+        service samba reload
