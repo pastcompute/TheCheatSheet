@@ -1,3 +1,11 @@
+## Tuning
+
+Test MTU. In the example, 1500 is the suspected MTU. Command fails if path MTU less than 1500
+
+```
+ping -c 1 -s $((1500-28)) -M do www.debian.org
+```
+
 ## Apache Web Server Tasks
 
 ### Serve a directory (simple)
