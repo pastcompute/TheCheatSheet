@@ -6,7 +6,7 @@ Rotate a PDF | `pdftk 12111601.PDF cat 1-endsouth output 2.pdf` | Debian Jessie<
 Manually check sysctl.d/ file | Run `sysctl -p /etc/sysctl.d/99-somefile`
 Syntax error in sysctl.d/ file | There are no single or double quotes, spaces in line are spaces! Unlike the command line version
 Sysctl network settings not working | UFW can interfere. Change setting in /etc/default/ufw as per http://serverfault.com/a/418038
-Change MTU on a network manager connection|`nmcli con modify  'Wired connection 1' 802-3-ethernet.mtu 140 ; nmcli con reload`
+Change MTU on a network manager connection|`nmcli con modify  'Wired connection 1' 802-3-ethernet.mtu 1460 ; nmcli con down 'Wired connection 1' ; nmcli con up 'Wired connection 1'`
 
 
 
