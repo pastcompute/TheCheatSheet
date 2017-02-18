@@ -8,6 +8,13 @@ Syntax error in sysctl.d/ file | There are no single or double quotes, spaces in
 Sysctl network settings not working | UFW can interfere. Change setting in /etc/default/ufw as per http://serverfault.com/a/418038
 Change MTU on a network manager connection|`nmcli con modify  'Wired connection 1' 802-3-ethernet.mtu 1460 ; nmcli con down 'Wired connection 1' ; nmcli con up 'Wired connection 1'`
 
+# Docker
+
+Task | Commands / Steps | Tested
+------------ | ------------- | ----
+Clean up old containers | `docker rm -v $(docker ps -a -q -f status=exited)` | Debian Jessie, Docker 1.13<br/>Ref: http://blog.yohanliyanage.com/2015/05/docker-clean-up-after-yourself/
+Clean up old images | `docker rmi $(docker images -f "dangling=true" -q)` | Debian Jessie, Docker 1.13
+
 
 
 # Debian
