@@ -2,6 +2,7 @@
 
 ```
 screen -r              # reattach
+screen -L              # automatically log to screenlog.n
 ```
 
 ## Keyboard sequences
@@ -17,5 +18,7 @@ C-a C-\   terminate
 C-a [     scrollback mode
 C-a |     vertical split
 C-a c     new screen and shell in blank pane
+C-a H     toggle logging
+C-a :     change screen working directory for logging
 
 ```
